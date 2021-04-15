@@ -1,0 +1,34 @@
+import discord
+import random
+#id = 832113653758427146
+client = discord.Client()
+
+@client.event
+async def on_member_join(member):
+    for channel in member.server.channels:
+        if str(channel) == "general":
+            await client.send(f"""Aye, you're a cunt waffle {member.mention}""")
+
+@client.event
+async def on_message(message):
+    id = client.get_guild(832113653758427146)
+    channels = {"testing-and-bot-commands"}
+    valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
+    bullying_list = {"yeetedon#1458", "Inverzion#1167"}
+    bully = random.randint(0, 4)
+
+    if str(message.author) in bullying_list:
+        await message.channel.send(bully)
+    if str(message.channel) in channels and str(message.author) in valid_users:
+        if message.content.find("!hey") != -1:
+            await message.channel.send("Oi, Aids Monkey")
+        if message.content.find("!hello") != -1:
+            await message.channel.send("HEY! I'M A FUCKING ROBOT")
+        elif message.content.find("!game") != -1:
+            await message.channel.send("What games do you want to play, huh?")
+        elif message.content.find("!help") != -1:
+            await message.channel.send("List of commands: (!hello, !hey, !game)")
+        elif message.content =="!users":
+            await message.channel.send(f"""# of Members: {id.member_count}""")
+
+client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.xsqz-qHMRDiXU2C5MQhRrxRksmQ")

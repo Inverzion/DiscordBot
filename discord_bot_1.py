@@ -20,7 +20,8 @@ async def on_message(message):
         if message.content.find("!hello") != -1:
             await message.channel.send("HEY! I'M A FUCKING ROBOT")
         elif message.content.find("!game") != -1:
-            await message.channel.send('open games.py', 'x')
+            free = open ('games.py', 'x')
+            await message.channel.send(free.execute)
         elif message.content.find("!help") != -1:
             await message.channel.send("List of commands: (!hello, !hey, !game)")
         elif message.content =="!users":

@@ -12,6 +12,10 @@ async def on_message(message):
     bully = random.randint(0,2)
     
     if str(message.author) in bullying_list:
+        import random
+        0 = ("You's a hoebag")
+        1 = ("haha, cunt")
+        2 = ("good one")
         await message.channel.send(bully)
 
     if str(message.channel) in channels and str(message.author) in valid_users:

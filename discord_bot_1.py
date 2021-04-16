@@ -7,12 +7,12 @@ async def on_message(message):
     id = client.get_guild(832113653758427146)
     channels = {"testing-and-bot-commands"}
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
-    bullying_list = {"yeetedon#1458", "Inverzion#1167"}
+    #bullying_list = {}
     import random
-    bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
+    #bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
 
-    if str(message.author) in bullying_list:
-        await message.channel.send(random.choice(bully))
+   # if str(message.author) in bullying_list:
+   #     await message.channel.send(random.choice(bully))
 
     if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("!hey") != -1:

@@ -15,13 +15,12 @@ async def on_message(message):
    #     await message.channel.send(random.choice(bully))
 
     if str(message.channel) in channels and str(message.author) in valid_users:
-        if message.content.find("!hey") != -1:
-            await message.channel.send("Oi, Aids Monkey")
+        if message.content.find("bazzas command") != -1:
+            await message.channel.send("Oi, Aids Monkey. Bazza wanted me to give you this m essage. YOU'RE A FUCKING BITCH! *cough cough*")
         if message.content.find("!hello") != -1:
-            await message.channel.send("HEY! I'M A FUCKING ROBOT")
+            await message.channel.send("Hey! I'm a self designed bot.")
         elif message.content.find("!game") != -1:
-            import games.py
-            await message.channel.send(execfile('games.py')
+            await message.channel.send("...I'm not designed for that")
         elif message.content.find("!help") != -1:
             await message.channel.send("List of commands: (!hello, !hey, !game)")
         elif message.content =="!users":

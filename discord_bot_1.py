@@ -9,13 +9,10 @@ async def on_message(message):
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
     bullying_list = {"yeetedon#1458", "Inverzion#1167"}
     import random
-    bully = random.randint(0,2)
-    0 = ("You's a hoebag")
-    1 = ("haha, cunt")
-    2 = ("good one")
-    
+    bully = ("new", "something", "let's try")
+
     if str(message.author) in bullying_list:
-        await message.channel.send(bully)
+        await message.channel.send(random.choice(bully))
 
     if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("!hey") != -1:

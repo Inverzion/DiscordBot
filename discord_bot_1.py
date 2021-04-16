@@ -1,5 +1,7 @@
 import discord
 import random
+import games.py
+games = open('games.py', 'x')
 #id = 832113653758427146
 client = discord.Client()
 
@@ -32,7 +34,7 @@ async def on_message(message):
         if message.content.find("!hello") != -1:
             await message.channel.send("HEY! I'M A FUCKING ROBOT")
         elif message.content.find("!game") != -1:
-            await message.channel.send("What games do you want to play, huh?")
+            await message.channel.send(games)
         elif message.content.find("!help") != -1:
             await message.channel.send("List of commands: (!hello, !hey, !game)")
         elif message.content =="!users":

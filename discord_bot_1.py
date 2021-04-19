@@ -9,14 +9,15 @@ async def on_message(message):
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
     #bullying_list = {}
     import random
-    #bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
+    bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
+    luck = random.randint(0,3)
 
-   # if str(message.author) in bullying_list:
-   #     await message.channel.send(random.choice(bully))
+    if str(message.author) in bullying_list and luck = 0:
+        await message.channel.send(random.choice(bully))
 
     if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("bazzas command") != -1:
-            await message.channel.send("Oi, Aids Monkey. Bazza wanted me to give you this m essage. YOU'RE A FUCKING BITCH! *cough cough*")
+            await message.channel.send("Oi, Aids Monkey. Bazza wanted me to give you this message. YOU'RE A FUCKING BITCH! *cough cough*")
         if message.content.find("!hello") != -1:
             await message.channel.send("Hey! I'm a self designed bot.")
         elif message.content.find("!game") != -1:

@@ -10,9 +10,9 @@ async def on_message(message):
     bullying_list = {"Inverzion#1167"}
     import random
     bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
-    luck = random.randint(0,3)
+    luck = random.randint(0,2)
 
-    if str(message.author) in bullying_list and luck = 0:
+    if str(message.author) in bullying_list and luck == 1:
         await message.channel.send(random.choice(bully))
 
     if str(message.channel) in channels and str(message.author) in valid_users:

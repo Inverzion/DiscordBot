@@ -3,7 +3,6 @@ import time
 import asyncio
 #id = 832113653758427146
 client = discord.Client()
-messages = joined = 0
 
 async def update_stats():
     await client.wait_until_ready()
@@ -11,11 +10,9 @@ async def update_stats():
     
     while not client.is_closed():
         try:
-            with open("stats.txt", "a") as f:
+            with open("stats.txt", "w") as f:
                 f.write(f"Time: {int(time.time())}, Messages: {messages}, Members Joined: {joined}\n")
-            
-            messages = 0
-            joined = 0
+                
             await asyncio.sleep(30)
         except Exception as e:
             print(e)

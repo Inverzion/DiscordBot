@@ -34,6 +34,7 @@ async def on_message(message):
     id = client.get_guild(832113653758427146)
     channels = {"testing-and-bot-commands"}
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
+    approved_users = {"Inverzion#1167}
     bullying_list = {"Inverzion#1167"}
     import random
     bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
@@ -56,10 +57,13 @@ async def on_message(message):
             await message.channel.send("Hey! I'm a self designed bot.")
         elif message.content.find("!game") != -1:
             await message.channel.send("...I'm not designed for that")
-        elif message.content =="!users":
+        elif message.content.find("!users") != -1:
             await message.channel.send(f"""# of Members: {id.member_count}""")
-        elif message.content == "!bullyme":
+        elif message.content.find("!bullyme") != -1:
             await message.channel.send(random.choice(bullymemessage))
+    if str(message.channel) in channels and str(message.author) in approved_users:
+        if message.content.find("!delete") != -1:
+             await message.channel.purge
 
 client.loop.create_task(update_stats())          
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

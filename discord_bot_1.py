@@ -25,9 +25,9 @@ async def update_stats():
 async def on_member_join(member):
     global joined
     joined += 1
-    for channel in member.server.channels
-    if str(channel) == "general":
-        await client.send_message(f"""Welcome to the shitshow {member.mention}""")
+    for channel in member.server.channels:
+        if str(channel) == "general":
+            await client.send_message(f"""Welcome to the shitshow {member.mention}""")
     
 
 @client.event

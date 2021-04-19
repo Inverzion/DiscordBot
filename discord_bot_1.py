@@ -41,6 +41,7 @@ async def on_message(message):
     import random
     bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
     luck = random.randint(0,2)
+    bullymemessage = ("You're so dumb, I bet you couldn't drink booze out of boot if the isntructions were written on the sole.", f"""My god you're retarded, who let you out of the speds class?, was it{random.choice(valid_users)}?""", "That's it, whatever you just said provoked me to call the cops on you.", "Woah, that's not very nice, it's almost as offensive as the kids in my basement.", "Come to think of it, I've fucked both of your moms.", "Shit bro, if I knew you were single, I would've been clapping those cheeks.")
 
     if str(message.author) in bullying_list and luck == 1:
         await message.channel.send(random.choice(bully))
@@ -60,6 +61,8 @@ async def on_message(message):
             await message.channel.send("...I'm not designed for that")
         elif message.content =="!users":
             await message.channel.send(f"""# of Members: {id.member_count}""")
+        elif message.content == "!bullyme":
+            await message.channel.send(random.choice(bullymemessage))
 
 client.loop.create_task(update_stats())          
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

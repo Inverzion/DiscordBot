@@ -7,7 +7,7 @@ async def on_message(message):
     id = client.get_guild(832113653758427146)
     channels = {"testing-and-bot-commands"}
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
-    #bullying_list = {}
+    bullying_list = {"Inverzion#1167"}
     import random
     bully = ("Honestly, fuck off.", "It's a beautiful day in the neighbourhood.", "haha, funny guy, haha...")
     luck = random.randint(0,3)

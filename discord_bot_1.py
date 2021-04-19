@@ -1,9 +1,39 @@
 import discord
+import time
+import asyncio
 #id = 832113653758427146
 client = discord.Client()
+messages = joined = 0
+
+async def update_stats():
+    await client.wait_until_ready()
+    global messages, joined
+    
+    while not client.is_closed():
+        try:
+            with open("stats.txt", "a") as f:
+                f.write(f"Time: {int(time.time())}, Messages: {messages}, Members Joined: {joined}\n")
+            
+            messages = 0
+            joined = 0
+            await asyncio.sleep(30)
+        except Exception as e:
+            print(e)
+            await asyncio.sleep(30)
+
+@client.event
+async def on_member_join(member):
+    global joined
+    joined += 1
+    for channel in member.server.channels
+    if str(channel) == "general":
+        await client.send_message(f"""Welcome to the shitshow{member.mention}""")
+    
 
 @client.event
 async def on_message(message):
+    global messages
+    messages += 1
     id = client.get_guild(832113653758427146)
     channels = {"testing-and-bot-commands"}
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
@@ -27,4 +57,5 @@ async def on_message(message):
         elif message.content =="!users":
             await message.channel.send(f"""# of Members: {id.member_count}""")
 
+client.loop.create_task(update_stats{})          
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

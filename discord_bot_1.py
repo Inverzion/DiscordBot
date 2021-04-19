@@ -27,7 +27,7 @@ async def on_member_join(member):
     joined += 1
     for channel in member.server.channels
     if str(channel) == "general":
-        await client.send_message(f"""Welcome to the shitshow{member.mention}""")
+        await client.send_message(f"""Welcome to the shitshow {member.mention}""")
     
 
 @client.event
@@ -57,5 +57,5 @@ async def on_message(message):
         elif message.content =="!users":
             await message.channel.send(f"""# of Members: {id.member_count}""")
 
-client.loop.create_task(update_stats{})          
+client.loop.create_task(update_stats())          
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

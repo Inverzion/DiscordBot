@@ -63,7 +63,7 @@ async def on_message(message):
             await message.channel.send(random.choice(bullymemessage))
     if str(message.channel) in channels and str(message.author) in approved_users:
         if message.content.find("!delete") != -1:
-             await message.channel.purge
+             await message.channel.send("Working on it boss. Now let's not crash the bot anymore")
 
 client.loop.create_task(update_stats())          
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

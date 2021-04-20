@@ -4,20 +4,6 @@ import asyncio
 #id = 832113653758427146
 client = discord.Client()
 
-async def update_stats():
-    await client.wait_until_ready()
-    global messages, joined
-    
-    while not client.is_closed():
-        try:
-            with open("stats.txt", "w") as f:
-                f.write(f"Time: {int(time.time())}, Messages: {messages}, Members Joined: {joined}\n")
-                
-            await asyncio.sleep(30)
-        except Exception as e:
-            print(e)
-            await asyncio.sleep(30)
-
 @client.event
 async def on_member_join(member):
     global joined

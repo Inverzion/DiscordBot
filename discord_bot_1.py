@@ -47,5 +47,5 @@ async def on_message(message):
         elif message.content.find("!bullyme") != -1:
             await message.channel.send(random.choice(bullymemessage))
 
-client.loop.create_task(update_stats())          
+
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

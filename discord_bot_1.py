@@ -5,15 +5,6 @@ import asyncio
 client = discord.Client()
 
 @client.event
-async def on_member_join(member):
-    global joined
-    joined += 1
-    for channel in member.server.channels:
-        if str(channel) == "general":
-            await client.send_message(f"""Welcome to the shitshow {member.mention}""")
-    
-
-@client.event
 async def on_message(message):
     global messages
     messages += 1

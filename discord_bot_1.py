@@ -27,7 +27,7 @@ async def on_message(message):
 
     if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("!bullyme") != -1:
-            bullymessage = (f"""{message.author}You are so dumb, I bet you couldnt drink booze out of a boot if the isntructions were written on the sole.""", f"""That is it, whatever {message.author} just said, provoked me to call the cops on you.""", f"""Woah, {message.author},that is *not* very nice, it is almost as offensive as the kids in my basement.""", f"""Come to think of it, I have fucked both of {message.author} moms.""", f"""Shit {message.author}, if I knew you were single, I would have been clapping those cheeks.""")
+            bullymessage = (f"""@{message.author}You are so dumb, I bet you couldnt drink booze out of a boot if the isntructions were written on the sole.""", f"""That is it, whatever @{message.author} just said, provoked me to call the cops on you.""", f"""Woah, @{message.author}, that is *not* very nice, it is almost as offensive as the kids in my basement.""", f"""Come to think of it, I have fucked both of @{message.author} moms.""", f"""Shit @{message.author}, if I knew you were single, I would have been clapping those cheeks.""")
             await message.channel.send(random.choice(bullymessage))
         if message.content.find("bazzas command") != -1:
             await message.channel.send("Oi, Aids Monkey. Bazza wanted me to give you this message. YOU'RE A FUCKING BITCH! *cough cough*")

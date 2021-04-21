@@ -6,7 +6,17 @@ import random
 client = discord.Client()
 
 @client.event
+async def on_member_join(member):
+    global joined
+    joined += 1
+    for channel in member.server.channels:
+        if str(channel) == "general":
+            await client.send_message(f"""Welcome to the shitshow {member.mention}""")
+
+@client.event
 async def on_message(message):
+    global message
+    message += 1
     id = client.get_guild(832113653758427146)
     channels = {"testing-and-bot-commands"}
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}

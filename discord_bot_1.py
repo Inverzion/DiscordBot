@@ -17,21 +17,21 @@ async def on_message(message):
 
     if str(message.author) in bullying_list and luck == 1:
         await message.channel.send(random.choice(bully))
-    elif message.content == "!help":
+    if message.content == "!help":
         embed = discord.Embed(title = "Help on BOT", description = "Some neglected commands")
         embed.add_field(name="!hello", value = "Bots description and greeting.")
         embed.add_field(name="!users", value = "Shows the count of members.")
         embed.add_field(name="!game", value = "Faulty programming bug.")
         await message.channel.send(content=None, embed=embed)
 
-    elif str(message.channel) in channels and str(message.author) in valid_users:
+    if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("bazzas command") != -1:
             await message.channel.send("Oi, Aids Monkey. Bazza wanted me to give you this message. YOU'RE A FUCKING BITCH! *cough cough*")
-        elif message.content.find("!hello") != -1:
+        if message.content.find("!hello") != -1:
             await message.channel.send("Hey! I'm a self designed bot.")
-        elif message.content.find("!game") != -1:
+        if message.content.find("!game") != -1:
             await message.channel.send("...I'm not designed for that")
-        elif message.content.find("!users") != -1:
+        if message.content.find("!users") != -1:
             await message.channel.send(f"""# of Members: {id.member_count}""")
 
 client.run("ODMyMDc4ODYxNjEzMDA2ODcw.YHej0w.a14W0YJkeKWcjzids74BvQyTsI4")

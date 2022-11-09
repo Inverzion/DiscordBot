@@ -7,7 +7,7 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-    id = client.get_guild(832113653758427146)
+    id = client.get_guild(832078861613006870)
     channels = {"newage-botcommands", "the-gate📱"}
     valid_users = {"Inverzion#1167", "ArtisticSloth#6223", "yeetedon#1458"}
     bullying_list = {"Inverzion#1167"}

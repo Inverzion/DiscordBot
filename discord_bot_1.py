@@ -2,7 +2,7 @@ import discord
 import time
 import asyncio
 import random
-#id = 832113653758427146
+id = 832078861613006870
 client = discord.Client()
 
 @client.event
